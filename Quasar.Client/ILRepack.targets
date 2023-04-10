@@ -14,6 +14,7 @@
     Parallel="true"
     Internalize="true"
     InputAssemblies="@(InputAssemblies)"
+    LibraryPath="$(OutputPath)"
     TargetKind="SameAsPrimaryAssembly"
     OutputFile="$(TargetPath)"/>
   </Target>

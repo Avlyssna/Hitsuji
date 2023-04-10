@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <TargetFramework>net452</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <OutputType>WinExe</OutputType>
     <AssemblyName>Client</AssemblyName>
     <UseWindowsForms>true</UseWindowsForms>
@@ -65,7 +65,7 @@
     </PackageReference>
     <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
     <PackageReference Include="protobuf-net">
-      <Version>2.4.8</Version>
+      <Version>3.2.16</Version>
     </PackageReference>
   </ItemGroup>
 </Project>

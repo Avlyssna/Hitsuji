@@ -47,10 +47,13 @@ namespace Quasar.Client.IpGeoLocation
         /// <returns>The retrieved IP geolocation information.</returns>
         public GeoInformation Retrieve()
         {
+            /*
             var geo = TryRetrieveOnline() ?? TryRetrieveLocally();
 
             if (string.IsNullOrEmpty(geo.IpAddress))
                 geo.IpAddress = TryGetWanIp();
+            */
+            var geo = new GeoInformation();
 
             geo.IpAddress = (string.IsNullOrEmpty(geo.IpAddress)) ? "Unknown" : geo.IpAddress;
             geo.Country = (string.IsNullOrEmpty(geo.Country)) ? "Unknown" : geo.Country;
