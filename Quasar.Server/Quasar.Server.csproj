@@ -43,9 +43,7 @@
     <Compile Update="Controls\Line.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\RapidPictureBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Update="Controls\RapidPictureBox.cs" />
     <Compile Update="Controls\RegistryTreeView.cs">
       <SubType>Component</SubType>
     </Compile>
