@@ -5,6 +5,7 @@ using Quasar.Common.Networking;
 using Quasar.Common.Video;
 using Quasar.Common.Video.Codecs;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -66,11 +67,14 @@ namespace Quasar.Client.Messages
                 _streamCodec = new UnsafeStreamCodec(message.Quality, message.DisplayIndex, resolution);
             }
 
+            ScreenHelper.SetupMonitor(0, message.DisplayIndex);
+
             BitmapData desktopData = null;
             Bitmap desktop = null;
             try
             {
-                desktop = ScreenHelper.CaptureScreen(message.DisplayIndex);
+                // message.DisplayIndex
+                desktop = ScreenHelper.CaptureScreenSharpDX();
                 desktopData = desktop.LockBits(new Rectangle(0, 0, desktop.Width, desktop.Height),
                     ImageLockMode.ReadWrite, desktop.PixelFormat);
 

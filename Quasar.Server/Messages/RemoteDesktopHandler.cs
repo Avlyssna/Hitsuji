@@ -210,8 +210,23 @@ namespace Quasar.Server.Messages
 
                 using (MemoryStream ms = new MemoryStream(message.Image))
                 {
-                    // create deep copy & resize bitmap to local resolution
-                    OnReport(new Bitmap(_codec.DecodeData(ms), LocalResolution));
+                    Graphics graphics = null;
+                    Bitmap rescaledBitmap = new Bitmap(LocalResolution.Width, LocalResolution.Height);
+
+                    try
+                    {
+                        graphics = Graphics.FromImage(rescaledBitmap);
+                        graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+                        graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bilinear;
+                        graphics.DrawImage(_codec.DecodeData(ms), 0, 0, LocalResolution.Width, LocalResolution.Height);
+                        graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+                    }
+                    finally
+                    {
+                        graphics?.Dispose();
+                    }
+
+                    OnReport(rescaledBitmap);
                 }
                 
                 message.Image = null;

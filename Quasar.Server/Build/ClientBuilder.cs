@@ -34,6 +34,9 @@ namespace Quasar.Server.Build
                 // PHASE 1 - Writing settings
                 WriteSettings(asmDef);
 
+                asmDef.Write(_options.OutputPath);
+
+                /*
                 // PHASE 2 - Renaming
                 Renamer r = new Renamer(asmDef);
 
@@ -42,6 +45,7 @@ namespace Quasar.Server.Build
 
                 // PHASE 3 - Saving
                 r.AsmDef.Write(_options.OutputPath);
+                */
             }
 
             // PHASE 4 - Assembly Information changing
