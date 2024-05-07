@@ -8,6 +8,8 @@
 Hitsuji is a fork of the popular [Quasar](https://github.com/quasar/Quasar) tool.
 It is designed for use as a red-team persistence tool during penetration testing.
 
+Please check out the [Getting Started](https://github.com/quasar/Quasar/wiki/Getting-Started) guide.
+
 ## Screenshots
 
 ![remote-shell](Images/remote-shell.png)
